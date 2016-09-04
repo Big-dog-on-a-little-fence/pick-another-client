@@ -1,6 +1,7 @@
 import Devise from 'ember-simple-auth/authenticators/devise';
+import config from 'pick-another-client/config/environment';
 
 export default Devise.extend({
-  serverTokenEndpoint: 'http://localhost:3000/users/sign_in',
+  serverTokenEndpoint: `${config.host}/users/sign_in`,
   identificationAttributeName: 'login'
 });
