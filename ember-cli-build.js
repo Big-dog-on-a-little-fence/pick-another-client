@@ -2,12 +2,22 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var shim = require('flexi/lib/pod-templates-shim');
+var autoprefixer = require('autoprefixer');
 
 shim(EmberApp);
 
+
 module.exports = function(defaults) {
+  var env = EmberApp.env() || 'development';
+  var enabled = env === 'development' ? false : true;
+  var fingerprintOptions = { enabled: enabled }
   var app = new EmberApp(defaults, {
-    // Add options here
+    fingerprint: fingerprintOptions,
+    cssModules: {
+      plugins: [
+        autoprefixer({ browsers: ['> 3%'] })
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated

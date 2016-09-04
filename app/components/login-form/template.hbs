@@ -17,9 +17,9 @@
     </box>
   </hbox>
   <hbox>
-    <centered xs="9">
+    <hbox xs="8">
       {{#if errorMessage}}
-        <centered xs="1">
+        <centered xs="1" align="start" justify="start">
           <span class="{{styles.error-exclaim}}">!</span>
         </centered>
         <centered xs="10" justify="start">
@@ -28,8 +28,8 @@
           </p>
         </centered>
       {{/if}}
-    </centered>
-    <centered xs="3" justify="end">
+    </hbox>
+    <centered xs="4" justify="end">
       {{#if authenticate.isRunning}}
         <centered class="{{styles.loading}}">🍕 </centered>
         <centered class="{{styles.loading}}">🍔</centered>

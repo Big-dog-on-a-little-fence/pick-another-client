@@ -1,4 +1,4 @@
-@value c-black, c-gray, c-white from './colors.css';
+@value c-black, c-gray, c-white, c-red from './colors.css';
 
 @font-face {
   font-family: 'Lato';
@@ -38,16 +38,21 @@ input {
   font-family: Merriweather, serif;
   font-size: 1rem;
   padding: .75em;
-  border: .01em solid;
+  border: 1px solid c-black;
   margin-bottom: 1em;
+  border-radius: 0;
+}
+
+input:not([type=checkbox]):not([type=radio]) {
+  appearance: none;
 }
 
 button {
   font-size: .8rem;
   background-color: c-white;
   color: c-black;
-  padding: 1.095em 2em;
-  border: .01em solid c-black;
+  padding: 1.095em 1em;
+  border: 1px solid c-black;
   cursor: pointer;
   transition: all .15s ease-in-out;
   font-family: Lato, sans-serif;
@@ -68,16 +73,17 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
-  color: c-black;
+  color: c-gray;
   transition: all .15s ease-in-out;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 a:hover {
-  text-shadow: .5px 0px 0px c-gray;
+  color: c-black
 }
 
 a:active {
-  text-shadow: .5px .5px 0px c-black;
+  color: c-red;
 }
 
 :global(.main) {
