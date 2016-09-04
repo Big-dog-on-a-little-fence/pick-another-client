@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('show', { path: ':jamId' });
     this.route('new');
   });
+  this.route('users');
 });
 
 export default Router;
