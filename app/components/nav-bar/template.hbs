@@ -5,11 +5,10 @@
   <hbox justify="end">
   {{#if isAuthenticated}}
     <box xs="4">
-      <a {{action logout}} class="{{styles.link}}">logout</a>
+      placeholder-link
     </box>
-  {{else}}
     <box xs="4">
-      {{#link-to "login" class=styles.link}}login{{/link-to}}
+      <a {{action logout}} class="{{styles.link}}">logout</a>
     </box>
   {{/if}}
   </hbox>
