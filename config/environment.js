@@ -19,12 +19,19 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute: 'index',
+    routeAfterAuthentication: 'jams.new',
+    routeIfAlreadyAuthenticated: 'jams.new'
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.host = '//localhost:3000'
   }
 
   if (environment === 'test') {

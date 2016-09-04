@@ -7,7 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('login');
+  this.route('jams', function() {
+    this.route('show', { path: ':jamId' });
+    this.route('new');
+  });
+  this.route('users');
 });
 
 export default Router;

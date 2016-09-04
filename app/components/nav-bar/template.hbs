@@ -1,16 +1,15 @@
-<box xs="3" align="start">
+<centered xs="3" align="start">
   {{link-to "pickanother.one" "application" class=styles.logo}}
-</box>
-<box xs="9">
+</centered>
+<centered xs="9">
   <hbox justify="end">
   {{#if isAuthenticated}}
-    <box xs="4">
+    <centered xs="4">
+      placeholder-link
+    </centered>
+    <centered xs="4">
       <a {{action logout}} class="{{styles.link}}">logout</a>
-    </box>
-  {{else}}
-    <box xs="4">
-      {{#link-to "login" class=styles.link}}login{{/link-to}}
-    </box>
+    </centered>
   {{/if}}
   </hbox>
-</box>
+</centered>
