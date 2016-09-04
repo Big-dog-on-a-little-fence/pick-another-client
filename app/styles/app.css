@@ -31,7 +31,7 @@ body {
 label {
   font-family: 'Lato';
   font-size: 1rem;
-  margin: 1em 0 .25em;
+  margin-bottom: .25em;
 }
 
 input {
@@ -39,16 +39,16 @@ input {
   font-size: 1rem;
   padding: .75em;
   border: .01em solid;
+  margin-bottom: 1em;
 }
 
 button {
-  font-size: 1rem;
+  font-size: .8rem;
   background-color: c-white;
   color: c-black;
-  padding: .5em 1em;
+  padding: 1.095em 2em;
   border: .01em solid c-black;
   cursor: pointer;
-  margin-top: 1em;
   transition: all .15s ease-in-out;
   font-family: Lato, sans-serif;
 }
