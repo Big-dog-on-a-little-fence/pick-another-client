@@ -1,0 +1,36 @@
+<form {{action "authenticate" on="submit"}}>
+  <hbox>
+    <box xs="12" sm="6">
+      <label for="identification">Login</label>
+      {{input id="identification"
+        placeholder="Enter Login"
+        value=identification
+        key-up="clearError"}}
+    </box>
+    <box xs="12" sm="6">
+      <label for="password">Password</label>
+      {{input id="password"
+        placeholder="Enter Password"
+        type="password"
+        value=password
+        key-up="clearError"}}
+    </box>
+  </hbox>
+  <hbox>
+    <hbox xs="10">
+      {{#if errorMessage}}
+        <centered xs="1" justify="start">
+          <span class="{{styles.error-exclaim}}">!</span>
+        </centered>
+        <centered xs="11" justify="start">
+          <p class="{{styles.error-message}}">
+            {{errorMessage}}
+          </p>
+        </centered>
+      {{/if}}
+    </hbox>
+    <box xs="2" align="end">
+      <button type="submit">Login</button>
+    </box>
+  </hbox>
+</form>

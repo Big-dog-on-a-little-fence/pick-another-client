@@ -1,0 +1,85 @@
+@value c-black, c-gray, c-white from './colors.css';
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/Merriweather/Merriweather-Regular.ttf');
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1rem;
+  font-family: Merriweather, serif;
+}
+
+label {
+  font-family: 'Lato';
+  font-size: 1rem;
+  margin: 1em 0 .25em;
+}
+
+input {
+  font-family: Merriweather, serif;
+  font-size: 1rem;
+  padding: .75em;
+  border: .01em solid;
+}
+
+button {
+  font-size: 1rem;
+  background-color: c-white;
+  color: c-black;
+  padding: .5em 1em;
+  border: .01em solid c-black;
+  cursor: pointer;
+  margin-top: 1em;
+  transition: all .15s ease-in-out;
+  font-family: Lato, sans-serif;
+}
+
+button:hover {
+  color: c-white;
+  background: c-black;
+}
+
+button:active {
+  color: c-white;
+  background: c-black;
+  text-shadow: .5px .5px 0px c-white;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+  color: c-black;
+  transition: all .15s ease-in-out;
+}
+
+a:hover {
+  text-shadow: .5px 0px 0px c-gray;
+}
+
+a:active {
+  text-shadow: .5px .5px 0px c-black;
+}
+
+:global(.main) {
+  padding-top: 1em;
+}
