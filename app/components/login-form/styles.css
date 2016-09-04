@@ -18,3 +18,31 @@
   border-radius: 1em;
   padding: 0em .425em;
 }
+
+.loading {
+  font-size: 2rem;
+  animation: spinR 1s ease infinite;
+  transform-origin: center;
+}
+
+.loading:nth-child(odd) {
+  animation: spinL 1s ease infinite;
+}
+
+@keyframes spinR {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinL {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
