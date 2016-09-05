@@ -1,8 +1,2 @@
-<container>
-  <vbox>
-    <vbox>
-      {{nav-bar isAuthenticated=session.isAuthenticated logout=(action "invalidateSession")}}
-    </vbox>
-    <vbox class="main">{{outlet}}</vbox>
-  </vbox>
-</container>
+{{nav-bar isAuthenticated=session.isAuthenticated logout=(action "invalidateSession")}}
+<vbox class="main">{{outlet}}</vbox>

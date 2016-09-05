@@ -1,8 +1,13 @@
-@value c-black, c-gray, c-white, c-red from './colors.css';
+@value c-black, c-gray, c-light-gray, c-white, c-primary from './colors.css';
 
 @font-face {
   font-family: 'Lato';
   src: url('../fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Lato-light';
+  src: url('../fonts/Lato/Lato-Light.ttf');
 }
 
 @font-face {
@@ -26,6 +31,9 @@ h1, h2, h3, h4, h5, h6 {
 body {
   font-size: 1rem;
   font-family: Merriweather, serif;
+  padding: 0;
+  margin: 0;
+  background-color: c-white;
 }
 
 label {
@@ -58,15 +66,10 @@ button {
   font-family: Lato, sans-serif;
 }
 
-button:hover {
-  color: c-white;
-  background: c-black;
-}
-
+button:hover,
 button:active {
-  color: c-white;
+  color: c-primary;
   background: c-black;
-  text-shadow: .5px .5px 0px c-white;
 }
 
 a,
@@ -83,9 +86,9 @@ a:hover {
 }
 
 a:active {
-  color: c-red;
+  color: c-primary;
 }
 
 :global(.main) {
-  padding-top: 1em;
+  padding: 1em;
 }

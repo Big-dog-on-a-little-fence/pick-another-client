@@ -1,4 +1,5 @@
-@value c-black: #333;
-@value c-gray: #666;
-@value c-white: #FFF;
+@value c-black: #192529;
+@value c-gray: rgb(183, 187, 188);
+@value c-white: #fff;
 @value c-red: #c01616;
+@value c-primary: rgb(100, 195, 179);
