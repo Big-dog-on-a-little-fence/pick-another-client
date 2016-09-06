@@ -1,19 +1,91 @@
-@value c-black, c-white from '../../styles/colors.css';
+@value c-red, c-black, c-white, c-primary from '../../styles/colors.css';
 
 :global(.ember-power-select-trigger) {
   border-color: c-black;
+  border-radius: 0;
 }
 
 :global(.ember-power-select-dropdown) {
   border-color: c-black;
+  border-radius: 0;
 }
 
 :global(.ember-power-select-multiple-option) {
   background: c-white;
   border-color: c-black;
+  border-radius: 0;
 }
 
 :global(.ember-power-select-multiple-remove-btn) {
   color: c-black;
   transition: all .15s ease-in-out;
+}
+
+.checkbox {
+  opacity: 0;
+}
+
+.checkbox-label {
+  padding: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid c-black;
+}
+
+.selected {
+  background-color: c-primary;
+  color: c-white;
+}
+
+.or {
+  padding: 2em;
+}
+
+.submit {
+  margin-top: 1em;
+}
+
+.error-message {
+  text-align: left;
+  font-size: .8rem;
+  color: c-red;
+  padding: 0;
+  margin: 0;
+}
+
+.error-exclaim {
+  font-size: 2.2rem;
+  font-family: 'Lato';
+  font-weight: 900;
+  color: c-red;
+  text-align: center;
+}
+
+.loading {
+  font-size: 2rem;
+  animation: spinR 1s ease infinite;
+  transform-origin: center;
+}
+
+.loading:nth-child(odd) {
+  animation: spinL 1s ease infinite;
+}
+
+@keyframes spinR {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinL {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
