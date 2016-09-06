@@ -1,0 +1,19 @@
+@value c-black, c-white from '../../styles/colors.css';
+
+:global(.ember-power-select-trigger) {
+  border-color: c-black;
+}
+
+:global(.ember-power-select-dropdown) {
+  border-color: c-black;
+}
+
+:global(.ember-power-select-multiple-option) {
+  background: c-white;
+  border-color: c-black;
+}
+
+:global(.ember-power-select-multiple-remove-btn) {
+  color: c-black;
+  transition: all .15s ease-in-out;
+}

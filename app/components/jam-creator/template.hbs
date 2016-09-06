@@ -1,0 +1,31 @@
+<form {{action "createJam" on="submit"}}>
+  <vbox>
+    <label>name of jam</label>
+    {{input type="text" placeholder="name" value=name}}
+  </vbox>
+  <vbox>
+  <label>search musicians</label>
+    {{#power-select-multiple
+      searchField="musicians"
+      search=(perform searchMusicians)
+      selected=selected
+      placeholder="Select musicians..."
+      onchange=(action (mut selected))
+      as |user|
+    }}
+      {{user.username}}
+    {{/power-select-multiple}}
+  </vbox>
+  <centered>or</centered>
+  <vbox>
+  <label>select musicians</label>
+    {{multiselect-checkboxes options=musicians labelProperty="username" selection=selected}}
+  </vbox>
+  <hbox justify="end">
+    <button type="submit">CREATE</button>
+  </hbox>
+</form>
+
+{{#each selectedMusicians as |m|}}
+  <div>{{m.username}}</div>
+{{/each}}
