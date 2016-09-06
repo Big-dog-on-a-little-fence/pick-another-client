@@ -21,9 +21,6 @@ html {
   color: c-black;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: Lato, sans-serif;
-}
 
 *, *:before, *:after {
   box-sizing: inherit;
@@ -37,6 +34,16 @@ body {
   background-color: c-white;
   color: c-black;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Lato, sans-serif;
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
 
 label {
   font-family: 'Lato';

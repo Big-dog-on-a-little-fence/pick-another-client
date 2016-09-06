@@ -1,31 +1,66 @@
-<form {{action "createJam" on="submit"}}>
+<form {{action (perform createJam selectedMusicians) on="submit"}}>
   <vbox>
-    <label>name of jam</label>
-    {{input type="text" placeholder="name" value=name}}
+    <hbox><box xs="12"><label>search musicians</label></box></hbox>
+    <hbox>
+      <box xs="12">
+        {{#power-select-multiple
+          searchField="musicians"
+          search=(perform searchMusicians)
+          selected=selectedMusicians
+          placeholder="type a username"
+          onchange=(action (mut selectedMusicians))
+          as |user|
+        }}
+          {{user.username}}
+        {{/power-select-multiple}}
+      </box>
+    </hbox>
   </vbox>
+  <centered class="{{styles.or}}">or</centered>
   <vbox>
-  <label>search musicians</label>
-    {{#power-select-multiple
-      searchField="musicians"
-      search=(perform searchMusicians)
-      selected=selected
-      placeholder="Select musicians..."
-      onchange=(action (mut selected))
-      as |user|
-    }}
-      {{user.username}}
-    {{/power-select-multiple}}
+    <hbox><box xs="12"><label>select musicians</label></box></hbox>
+    {{#multiselect-checkboxes tagName="hbox" options=musicians selection=selectedMusicians as |user isSelected|}}
+      <box xs="6" md="4">
+        <label class="{{styles.checkbox-label}} {{if isSelected styles.selected}}">
+          <centered>
+            <centered>
+              {{#if isSelected}}
+                🎻
+              {{/if}}
+              {{user.username}}
+            </centered>
+            <box xs="1">{{input type="checkbox" checked=isSelected class=styles.checkbox}}</box>
+          </centered>
+        </label>
+      </box>
+    {{/multiselect-checkboxes}}
   </vbox>
-  <centered>or</centered>
-  <vbox>
-  <label>select musicians</label>
-    {{multiselect-checkboxes options=musicians labelProperty="username" selection=selected}}
-  </vbox>
-  <hbox justify="end">
-    <button type="submit">CREATE</button>
+  <hbox>
+    <hbox xs="12" sm="8">
+      {{#if errorMessage}}
+        <centered xs="1" align="start" justify="start">
+          <span class="{{styles.error-exclaim}}">!</span>
+        </centered>
+        <centered xs="10" justify="start">
+          <p class="{{styles.error-message}}">
+            {{errorMessage}}
+          </p>
+        </centered>
+      {{/if}}
+    </hbox>
+    <hbox xs="12" sm="4" justify="end">
+      <box class="{{styles.submit}}">
+        {{#if createJam.isRunning}}
+          <hbox>
+            <centered class="{{styles.loading}}">🍕 </centered>
+            <centered class="{{styles.loading}}">🐈</centered>
+            <centered class="{{styles.loading}}">🍔</centered>
+            <centered class="{{styles.loading}}">🐩</centered>
+          </hbox>
+        {{else}}
+          <button type="submit">CREATE</button>
+        {{/if}}
+      </box>
+    </hbox>
   </hbox>
 </form>
-
-{{#each selectedMusicians as |m|}}
-  <div>{{m.username}}</div>
-{{/each}}
