@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
+    EmberHammertime: {
+      touchActionSelectors: ['button', 'input', 'a', 'textarea'],
+      touchActionProperties: 'touch-action: manipulation; -ms-touch-action: manipulation; cursor: pointer;'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
