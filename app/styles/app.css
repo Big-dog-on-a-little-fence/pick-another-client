@@ -98,6 +98,10 @@ a:active {
   color: c-primary;
 }
 
+[data-ember-action], a, button, input, .link {
+  cursor: pointer;
+}
+
 :global(.main) {
   padding: 1em;
 }
