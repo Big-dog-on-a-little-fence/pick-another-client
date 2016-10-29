@@ -3,7 +3,8 @@ import attr from 'ember-data/attr';
 import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
-  name: attr('string'),
-  users: hasMany('users'),
-  tunes: hasMany('tunes')
+    name: attr(),
+    key: attr(),
+    timeSignature: attr(),
+    jams: hasMany('jams')
 });
