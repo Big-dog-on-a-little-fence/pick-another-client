@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('new');
   });
   this.route('users');
+  this.route('tunes');
 });
 
 export default Router;
