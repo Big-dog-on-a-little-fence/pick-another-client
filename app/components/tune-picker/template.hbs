@@ -8,7 +8,9 @@
   {{/if}}
 
   <vbox xs="10" align="center">
-    <hbox align="end">{{currentTune.name}}</hbox>
+    <hbox>
+      <h1 class="{{styles.current-title}}">{{currentTune.name}}</h1>
+    </hbox>
     <hbox>
       {{currentTune.key}} - {{currentTune.timeSignature}}
     </hbox>
@@ -16,11 +18,11 @@
 
   {{#if nextTune}}
     <vbox class="justify-center col-xs-1 {{styles.side}}" {{action "playNextTune"}}>
-      ➡
+      <span class="{{styles.right-arrow}}">⬅</span>
     </vbox>
   {{else}}
     <vbox xs="1"></vbox>
   {{/if}}
 </hbox>
 
-{{show-all-tunes tunes=tunes currentTune=currentTune}}
+{{show-all-tunes class=styles.show-all-tunes tunes=tunes currentTune=currentTune}}

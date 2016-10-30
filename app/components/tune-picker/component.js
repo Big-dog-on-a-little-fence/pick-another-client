@@ -9,6 +9,7 @@ const {
 } = Ember;
 
 export default Component.extend(RecognizerMixin, {
+  classNameBindings: ['styles.tune-picker'],
   recognizers: 'swipe',
   swipeRight(e) {
     this.goToPreviousTune();

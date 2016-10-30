@@ -1,8 +1,15 @@
 @value c-black, c-white, c-primary from '../../styles/colors.css';
 
-.show-all {
+.tunes {
+  overflow-y: auto;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.toggle {
+  min-height: 10vh;
+  max-height: 10vh;
   text-decoration: underline;
-  padding: 1em;
 }
 
 .tune {

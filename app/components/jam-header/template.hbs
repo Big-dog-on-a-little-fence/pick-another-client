@@ -1,8 +1,10 @@
-<vbox xs="6">
+<vbox class="col-xs-6 {{styles.title-container}}">
   <hbox class="{{styles.title}}">
     {{if name name "Unnamed Jam"}}
   </hbox>
-  <hbox class="{{styles.common}}">{{tunesCount}} tunes in common</hbox>
+  <hbox class="{{styles.common}}">
+    {{tunesCount}} tunes in common
+  </hbox>
 </vbox>
 <vbox xs="6">
   <hbox>
