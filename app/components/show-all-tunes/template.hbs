@@ -7,11 +7,13 @@
 {{#if showTunes}}
   <vbox class="{{styles.tunes}} tunes">
     {{#each tunes as |tune|}}
-      <hbox id="{{concat 'tune' tune.id}}" class="{{if (eq tune currentTune) styles.current-tune}} {{styles.tune}}" {{action chooseTune tune}}>
-        <box xs="8">{{tune.name}}</box>
-        <box xs="2" align="center">{{tune.key}}</box>
-        <box xs="2" align="center">{{tune.timeSignature}}</box>
-      </hbox>
+      {{listed-tune
+        tagName="hbox"
+        id=(concat "tune" tune.id)
+        class=(concat (if (eq tune currentTune) styles.current-tune) " " styles.tune)
+        tune=tune
+        click=(action chooseTune tune)
+      }}
     {{/each}}
   </vbox>
 {{/if}}
