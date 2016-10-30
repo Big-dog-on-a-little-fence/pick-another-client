@@ -1,8 +1,8 @@
 import Ember from 'ember';
+import { animate } from 'liquid-fire';
 
 const {
   Component,
-  computed,
   observer
 } = Ember;
 
@@ -12,9 +12,14 @@ export default Component.extend({
     if (this.get('showTunes')) {
       let container = this.$(`.${this.get('styles.tunes')}`);
       let target = this.$(`#tune${this.get('currentTune.id')}`);
-      let verticalCoord = target.offset().top;
-      let scrollTop = container.scrollTop() - container.offset().top + verticalCoord;
-      container.scrollTop(scrollTop);
+      let offset = target.height() * (-2);
+
+      animate(target, "scroll", {
+        container,
+        offset,
+        duration: 300,
+        easing: 'easeInOutExpo'
+      });
     }
   }),
   actions: {

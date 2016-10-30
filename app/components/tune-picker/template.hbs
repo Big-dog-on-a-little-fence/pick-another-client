@@ -1,7 +1,7 @@
 <hbox class="{{styles.tune-container}}">
   {{#if previousTune}}
     <vbox class="justify-center col-xs-1 {{styles.side}}" {{action "playPreviousTune"}}>
-      <centered>⬅</centered>
+      <centered><span class="{{styles.prev}}">prev</span></centered>
     </vbox>
   {{else}}
     <vbox xs="1"></vbox>
@@ -18,7 +18,7 @@
 
   {{#if nextTune}}
     <vbox class="justify-center col-xs-1 {{styles.side}}" {{action "playNextTune"}}>
-      <centered class="{{styles.right-arrow}}">⬅</centered>
+      <centered><span class="{{styles.next}}">next</span></centered>
     </vbox>
   {{else}}
     <vbox xs="1"></vbox>

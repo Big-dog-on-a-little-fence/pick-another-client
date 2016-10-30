@@ -1,9 +1,11 @@
 @value c-black, c-white, c-primary from '../../styles/colors.css';
 
 .tunes {
-  overflow-y: auto;
   min-height: 50vh;
   max-height: 50vh;
+  /* fix momentum scrolling - has to be scroll, not auto */
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .toggle {
@@ -13,7 +15,9 @@
 }
 
 .tune {
-  padding: .25em 0
+  padding: .25em 0;
+  cursor: pointer;
+  line-height: 3em;
 }
 
 .current-tune {
