@@ -3,6 +3,8 @@
 .nav-bar {
   font-family: Lato, sans-serif;
   background-color: c-black;
+  min-height: 10vh;
+  max-height: 10vh;
 }
 
 .logo {

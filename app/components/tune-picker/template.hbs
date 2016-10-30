@@ -1,0 +1,28 @@
+<hbox class="{{styles.tune-container}}">
+  {{#if previousTune}}
+    <vbox class="justify-center col-xs-1 {{styles.side}}" {{action "playPreviousTune"}}>
+      <centered>⬅</centered>
+    </vbox>
+  {{else}}
+    <vbox xs="1"></vbox>
+  {{/if}}
+
+  <vbox xs="10" align="center">
+    <hbox align="center">
+      <h1 class="{{styles.current-title}}">{{currentTune.name}}</h1>
+    </hbox>
+    <hbox>
+      {{currentTune.key}} - {{currentTune.timeSignature}}
+    </hbox>
+  </vbox>
+
+  {{#if nextTune}}
+    <vbox class="justify-center col-xs-1 {{styles.side}}" {{action "playNextTune"}}>
+      <centered class="{{styles.right-arrow}}">⬅</centered>
+    </vbox>
+  {{else}}
+    <vbox xs="1"></vbox>
+  {{/if}}
+</hbox>
+
+{{show-all-tunes class=styles.show-all-tunes tunes=tunes currentTune=currentTune chooseTune=(action "chooseTune")}}

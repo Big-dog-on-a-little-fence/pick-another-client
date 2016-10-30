@@ -1,0 +1,30 @@
+@value c-black from '../../styles/colors.css';
+
+.tune-picker {
+  min-height: 80vh;
+  max-height: 80vh;
+}
+
+.tune-container {
+  min-height: 20vh;
+  max-height: 20vh;
+}
+
+.show-all-tunes {
+  min-height: 60vh;
+  max-height: 60vh;
+}
+
+.side {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.right-arrow {
+  transform: rotate(180deg);
+}
+
+.current-title {
+  line-height: 1em;
+  text-align: center;
+}
