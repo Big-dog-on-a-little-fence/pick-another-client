@@ -32,14 +32,6 @@ export default Component.extend(RecognizerMixin, {
   previousTune: computed('playedTunes.[]', function() {
     return this.get('playedTunes.lastObject.name');
   }),
-  actions: {
-    playNextTune() {
-      this.goToNextTune();
-    },
-    playPreviousTune() {
-      this.goToPreviousTune();
-    }
-  },
   goToNextTune() {
     if (isBlank(this.get('unplayedTunes'))) {
       return;
@@ -55,5 +47,22 @@ export default Component.extend(RecognizerMixin, {
 
     this.get('unplayedTunes').unshiftObject(this.get('currentTune'));
     this.set('currentTune', this.get('playedTunes').popObject());
+  },
+  actions: {
+    playNextTune() {
+      this.goToNextTune();
+    },
+    playPreviousTune() {
+      this.goToPreviousTune();
+    },
+    chooseTune(tune) {
+      let tunes = this.get('tunes');
+      let currentTuneIndex = tunes.indexOf(tune);
+
+      this.set('playedTunes', tunes.slice(0, currentTuneIndex));
+      this.set('unplayedTunes', tunes.slice(currentTuneIndex, tunes.get('length')));
+
+      this.set('currentTune', this.get('unplayedTunes').shiftObject());
+    }
   }
 });
