@@ -1,27 +1,7 @@
 <vbox>
-  <hbox>
-    <box>{{if model.name model.name "Unnamed Jam"}}</box>
-  </hbox>
-  <hbox>
-    <box>{{model.tunes.length}} tunes in common</box>
-  </hbox>
+  {{jam-header tagName="hbox" name=model.name users=model.users tunesCount=model.tunes.length}}
 
-  <hbox>
-    {{#each model.users as |user|}}
-      <centered xs="12">{{user.username}}</centered>
-    {{/each}}
-  </hbox>
-
-  <hbox>
-    <centered>Tunes</centered>
-  </hbox>
-  <hbox>
-    {{#each model.tunes as |tune|}}
-      <box xs="4">{{tune.name}}</box>
-      <box xs="4">{{tune.key}}</box>
-      <box xs="4">{{tune.timeSignature}}</box>
-    {{/each}}
-  </hbox>
+  {{tune-picker tunes=model.tunes}}
 </vbox>
 
 {{outlet}}

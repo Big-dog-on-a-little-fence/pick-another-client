@@ -1,0 +1,10 @@
+@value c-black from '../../styles/colors.css';
+
+.tune-container {
+  min-height: 20vh;
+}
+
+.side {
+  font-size: 1.4rem;
+  cursor: pointer;
+}

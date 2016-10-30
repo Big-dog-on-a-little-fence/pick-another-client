@@ -1,0 +1,13 @@
+<vbox xs="6">
+  <hbox class="{{styles.title}}">
+    {{if name name "Unnamed Jam"}}
+  </hbox>
+  <hbox class="{{styles.common}}">{{tunesCount}} tunes in common</hbox>
+</vbox>
+<vbox xs="6">
+  <hbox>
+    {{#each users as |user|}}
+      <centered class="{{styles.user}}">{{user.username}}</centered>
+    {{/each}}
+  </hbox>
+</vbox>

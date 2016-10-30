@@ -1,0 +1,15 @@
+@value c-black, c-white, c-primary from '../../styles/colors.css';
+
+.show-all {
+  text-decoration: underline;
+  padding: 1em;
+}
+
+.tune {
+  padding: .25em 0
+}
+
+.current-tune {
+  color: c-white;
+  background: c-black;
+}

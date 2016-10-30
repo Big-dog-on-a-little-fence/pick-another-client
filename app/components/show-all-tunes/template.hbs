@@ -1,0 +1,15 @@
+<hbox>
+  <centered class="{{styles.show-all}}" {{action "toggleTunes"}}>
+    {{if showTunes "Hide tunes" "Show all tunes"}}
+  </centered>
+</hbox>
+
+{{#if showTunes}}
+  {{#each tunes as |tune|}}
+    <hbox class="{{if (eq tune currentTune) styles.current-tune}} {{styles.tune}}">
+      <box xs="4">{{tune.name}}</box>
+      <box xs="4">{{tune.key}}</box>
+      <box xs="4">{{tune.timeSignature}}</box>
+    </hbox>
+  {{/each}}
+{{/if}}
