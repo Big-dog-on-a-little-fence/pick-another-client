@@ -24,6 +24,18 @@ module.exports = function(deployTarget) {
     }
   };
 
+  ENV['display-revisions'] = {
+    amount: 10,
+    revisions: function(context) {
+      return context.revisions;
+    }
+  }
+
+  ENV["revision-data"] = {
+    type: 'file-hash',
+    scm: null
+  }
+
   if (VALID_DEPLOY_TARGETS.indexOf(deployTarget) === -1) {
     throw new Error('Invalid deployTarget ' + deployTarget);
   }
