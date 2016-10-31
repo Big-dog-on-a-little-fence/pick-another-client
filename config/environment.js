@@ -39,7 +39,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
-    ENV.host = '//localhost:3000'
+    ENV.host = '//localhost:3000';
+    ENV.wsHost = 'ws://localhost:3000/cable';
   }
 
   if (environment === 'test') {
@@ -54,7 +55,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.host = process.env.PAO_API_ENDPOINT
+    ENV.host = process.env.PAO_API_ENDPOINT;
+    ENV.wsHost = `wss:${ENV.host}/cable`;
   }
 
   return ENV;
