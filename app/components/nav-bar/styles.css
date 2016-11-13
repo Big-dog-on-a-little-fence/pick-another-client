@@ -1,7 +1,7 @@
 @value c-black, c-white, c-primary from '../../styles/colors.css';
 
 .nav-bar {
-  font-family: Lato, sans-serif;
+  font-family: sans-serif;
   background-color: c-black;
   min-height: 10vh;
   max-height: 10vh;
@@ -9,7 +9,7 @@
 
 .logo {
   font-size: .8rem;
-  font-family: Lato-light, sans-serif;
+  font-family: sans-serif;
   padding: 1em 0;
   text-align: center;
   color: c-white;
