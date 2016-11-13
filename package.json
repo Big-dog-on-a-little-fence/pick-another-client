@@ -48,6 +48,7 @@
     "ember-gestures": "0.4.2",
     "ember-getowner-polyfill": "1.0.1",
     "ember-hammertime": "1.0.0",
+    "ember-load": "0.0.11",
     "ember-load-initializers": "^0.5.1",
     "ember-multiselect-checkboxes": "0.10.1",
     "ember-power-select": "1.0.0-beta.26",
